@@ -36,3 +36,86 @@
     transform: rotate(360deg);
   }
 }
+
+
+.nav {
+  display: flex;
+}
+
+.nav > li {
+  margin-right: 30px;
+  list-style-type: none;
+}
+
+.nav-link{
+  color: white;
+  text-decoration: none;
+}
+
+.login-icon {
+  color: #3f51b5;
+  position: relative;
+  top: 10px;
+  margin-right: 16px;
+}
+
+.login-form {
+  margin: 0 auto;
+  width: 400px;
+  padding-top: 80px;
+}
+
+.login-form .login-button {
+  width: 50%;
+  background-color: #3f51b5;
+  color: white;
+  margin-top: 50px; 
+}
+
+.login-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.listings {
+  margin-top: 30px;
+}
+
+.add-listing-form {
+  width: 45%;
+}
+
+.listing { 
+  display: flex;
+  padding: 60px 100px;
+}
+
+.add-listing-form {
+  width: 40%;
+}
+
+.add-listing-input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.add-listing-form .add-listing-button {
+  width: 50%;
+  background-color: #3f51b5;
+  color: white;
+  margin-top: 30px; 
+}
+
+.logged-in-bar {
+  height: 30px; 
+  display: flex;
+  align-items: center;
+  background-color: #ebebeb;
+  padding-left: 40px;
+  font-size: 9pt !important;
+  font-style: italic;
+}
+
+.app-bar {
+  padding-left: 16px;
+}

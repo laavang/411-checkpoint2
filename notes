@@ -1,0 +1,67 @@
+DETAILS SCREEN (public)
+LISTINGS (public)
+LISTINGS w/ DELETE (private)
+ADD LISTING SCREEN (private)
+LOGIN
+
+Nav should show "logout" when logged in
+Nav should show "log in" when logged out
+
+LISTINGS
+
+- Business name
+- description
+- address
+- operating hours
+- (Logged in) delete icon which deletes row
+
+DETAILS 
+
+Rearrange data
+encorporate map API
+
+LOGIN
+- "Password" input type to hide 
+- Set user cookie (possibly store in redux state)
+- Once logged in, small bar under nav that says they're logged in & shows username
+
+
+ADD LISTING
+- Private route - /add
+- Form 
+- Listing added to Redux store
+- Shows in listings table upon return
+- use componentDidUpdate you'll know when certain properties of state have changed. You'll probably be changing this properties as you type in the Text field. If the address has changed, you can use this to call your "getCoordinates" action (or whatever you named it) and get the lat/lng for your map. This will allow you to update your map in real time.
+
+
+NAV
+
+-Login / logout (sets and removes cookie) 
+- When logged out, reset "user" state in Redux 
+
+
+
+/// REDUX /// 
+
+// State 
+
+- user
+- listings
+- map
+- cookie? 
+
+
+// Actions
+
+- Delete listing
+- Add listing
+- Login
+- Log out
+- Fetch coordinates for your map given address 
+
+// Router
+
+- Private route
+Your "isAuthenticated" function that complements the private route may use the "cookie" npm package to parse the cookie. Remember you can set a cookie by writing document.cookie = "user=<USERNAME>;max-age=60*1000*5;
+
+
