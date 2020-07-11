@@ -7,10 +7,11 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
-import listings from '../listings.json'
 import { Link } from 'react-router-dom'
 
-const Listings = () => {
+
+
+const Listings = (props) => {
     return (
         <Container maxWidth="lg" className="listings">
             <Table className="listing-table">
@@ -23,10 +24,10 @@ const Listings = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {listings.map((listing, id) => (
-                        <TableRow key={id}>
+                    {props.listings.map((listing, index) => (
+                        <TableRow key={index}>
                             <TableCell component="th" scope="row">
-                            <Link to={`/details?id=${listing.id}`}>{listing.name}</Link>
+                            <Link to={`/details?id=${index + 1}`}>{listing.name}</Link>
                             </TableCell>
                             <TableCell>{listing["address"]}</TableCell>
                             <TableCell>{listing["hours"]}</TableCell>

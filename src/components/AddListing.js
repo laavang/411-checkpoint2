@@ -9,7 +9,6 @@ import {
 
 class AddListing extends Component {
     state = {
-        listing: {name: null, address: null, hours: null, description: null}
     }
 
     handleTextChange = (e) => {
@@ -20,6 +19,7 @@ class AddListing extends Component {
 
     addListing = (e) => {
         e.preventDefault()
+        console.log('Listing sending to addListing ', this.state);
         this.props.addListing(this.state)
         this.props.history.push("/")
     }
@@ -28,10 +28,10 @@ class AddListing extends Component {
         return (
             <div className="add-listing">
                 <form className="add-listing-form" onSubmit={this.addListing}>
-                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.listing.name} placeholder="Name" name="business-name" id="business-name" />
-                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.listing.address} placeholder="Address" name="business-address" id="business-address" />
-                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.listing.hours} placeholder="Hours (e.g. 8AM - 9PM)" name="business-hours" id="business-hours" />
-                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.listing.description} placeholder="Description" name="business-description" id="business-description" />
+                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.name} placeholder="Name" name="name" id="name" />
+                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.address} placeholder="Address" name="address" id="address" />
+                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.hours} placeholder="Hours (e.g. 8AM - 9PM)" name="hours" id="hours" />
+                    <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.description} placeholder="Description" name="description" id="description" />
                     <Button type="submit" className="add-listing-button">Add Listing</Button>
                 </form>
             </div>

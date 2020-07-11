@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 
 const listings = (state = [], action) => {
     switch(action.type) {
-        case 'ADD_Listing':
+        case 'ADD_LISTING':
+            console.log('Action value ', action.value)
             return [ ...state, action.value ];
         default:
             return state
