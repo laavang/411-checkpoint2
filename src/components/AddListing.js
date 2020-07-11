@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
+import Map from './Map'
 
 const addListing = () => {
     return (
@@ -13,8 +14,7 @@ const addListing = () => {
                     <div><Input className="add-listing-input" placeholder="Description" name="business-description" id="business-description"></Input></div>
                     <div><Button className="add-listing-button">Save</Button></div>
                 </div>
-                <div className="map">
-                </div>
+            <Map />    
             </div>
     )
 }

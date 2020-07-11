@@ -8,6 +8,7 @@ import {
     TableRow
 } from '@material-ui/core'
 import listings from '../listings.json'
+import { Link } from 'react-router-dom'
 
 const Listings = () => {
     return (
@@ -22,10 +23,10 @@ const Listings = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {listings.map((listing, idx) => (
-                        <TableRow key={idx}>
+                    {listings.map((listing, id) => (
+                        <TableRow key={id}>
                             <TableCell component="th" scope="row">
-                                {listing.name}
+                            <Link to={{pathname:`/details?id=${listing.id}`, listingProps:{listingId:`${listing.id}`}}}>{listing.name}</Link>
                             </TableCell>
                             <TableCell>{listing["address"]}</TableCell>
                             <TableCell>{listing["hours"]}</TableCell>
