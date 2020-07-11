@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 const Listings = () => {
     return (
         <Container maxWidth="lg" className="listings">
-            <Table>
+            <Table className="listing-table">
                 <TableHead>
                     <TableRow>
                         <TableCell style={{ width: "15%", minWidth: "130px" }}>Name</TableCell>
@@ -26,7 +26,7 @@ const Listings = () => {
                     {listings.map((listing, id) => (
                         <TableRow key={id}>
                             <TableCell component="th" scope="row">
-                            <Link to={{pathname:`/details?id=${listing.id}`, listingProps:{listingId:`${listing.id}`}}}>{listing.name}</Link>
+                            <Link to={`/details?id=${listing.id}`}>{listing.name}</Link>
                             </TableCell>
                             <TableCell>{listing["address"]}</TableCell>
                             <TableCell>{listing["hours"]}</TableCell>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 import cookie from 'cookie'
-import Login from './components/Login'
+import Login from './containers/Login'
 import ListingDetails from './containers/ListingDetails'
 import Listings from './components/Listings'
-import AddListing from './components/AddListing'
+import AddListing from './containers/AddListing'
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)

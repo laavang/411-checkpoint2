@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router'
+// import { Redirect } from 'react-router'
 import {
   TextField,
   Button,
@@ -24,7 +24,8 @@ class Login extends Component {
     // set cookie here
     this.state.isLoggedIn = true;
     document.cookie = "isLoggedIn=true;max-age=60*1000";
-    window.location.replace("/")
+    this.props.logIn(this.state)
+    this.props.history.push("/")
   }
 
   render() {

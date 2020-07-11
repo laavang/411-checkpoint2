@@ -78,6 +78,12 @@
   max-width: 300px;
 }
 
+.add-listing { 
+  display: flex;
+  flex-direction: column;
+  padding: 60px 100px;
+}
+
 .listing > p {
   line-height: 160%;
 }
@@ -104,12 +110,12 @@
 }
 
 .logged-in-bar {
-  height: 30px; 
+  height: 40px; 
   display: flex;
   align-items: center;
   background-color: #ebebeb;
   padding-left: 40px;
-  font-size: 9pt !important;
+  font-size: 11pt !important;
   font-style: italic;
 }
 
@@ -120,4 +126,8 @@
 .leaflet-map { 
   height: 300px;
   width: 100%; 
+}
+
+.listing-table * {
+  font-size: 13pt !important;
 }

@@ -5,6 +5,8 @@ import LoggedInBar from './LoggedInBar'
 
 const Navigation = (props) => {
 
+    console.log(props.user);
+
     return (
         <div>
             <AppBar position="static" className="app-bar">
@@ -17,7 +19,7 @@ const Navigation = (props) => {
                             <Link className="nav-link" to="/">Listings</Link>
                         </li>
                         <li>
-                            {props.user["isLoggedIn"]
+                            {props.user && props.user.isLoggedIn || document.cookie
                                 ?
                                 <li className="nav-list-item"
                                     onClick={() => {
@@ -30,7 +32,7 @@ const Navigation = (props) => {
                                 <Link className="nav-link" to="/login">Log In</Link>
                             }
                         </li>
-                        {props.user["isLoggedIn"]
+                        {props.user && props.user.isLoggedIn || document.cookie
                             ? <li>
                                 <Link className="nav-link" to="/add">Add</Link>
                             </li>
@@ -39,9 +41,9 @@ const Navigation = (props) => {
                     </ul>
                 </Toolbar>
             </AppBar>
-            {props.user["isLoggedIn"]
+            {props.user && props.user.isLoggedIn || document.cookie
                 ?
-                <LoggedInBar username={props.user["username"]}/>
+                <LoggedInBar username={props.user.username}/>
                 :
                 ""
             }
