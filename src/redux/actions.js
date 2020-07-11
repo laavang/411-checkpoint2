@@ -13,3 +13,10 @@ export const addListing = (listing) => {
         value: listing
     }
 }
+
+export const deleteListing = (index) => {
+    return {
+        type: 'DELETE_LISTING',
+        value: index
+    }
+}

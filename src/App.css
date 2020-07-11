@@ -131,3 +131,7 @@
 .listing-table * {
   font-size: 13pt !important;
 }
+
+.text-red {
+  color: #d62a2a;
+}
