@@ -14,7 +14,9 @@ const listings = (state = [], action) => {
     }
 }
 
-const map = (state = null) => state
+const map = (state = {lat: 30.274, lng: 97.740, zoom: 13,}) => state
+
+
 
 const user = (state = { username: null, password: null, isLoggedIn: false }, action) => {
     switch (action.type) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Input from '@material-ui/core/Input';
-// import Map from './Map'
+import LeafletMap from './LeafletMap'
 import {
     TextField,
     Button,
@@ -34,6 +34,9 @@ class AddListing extends Component {
                     <TextField className="add-listing-input" onChange={this.handleTextChange} value={this.state.description} placeholder="Description" name="description" id="description" />
                     <Button type="submit" className="add-listing-button">Add Listing</Button>
                 </form>
+                <div className="leaflet-map-container">
+                    <LeafletMap className="leaflet-map" />
+                </div>
             </div>
         )
     }

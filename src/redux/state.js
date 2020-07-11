@@ -36,5 +36,9 @@ export default {
             "hours": "7AM - 8:30PM"
         }
     ],
-    map: null
+    map: {
+        lat: 30.2747,
+        lng: -97.7404,
+        zoom: 13,
+    }
 }

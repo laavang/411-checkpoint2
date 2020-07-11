@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { render } from '@testing-library/react';
-// import Map from './Map'
+import LeafletMap from '../containers/LeafletMap'
 
 
 const ListingDetails = (props) => {
@@ -31,12 +31,15 @@ const ListingDetails = (props) => {
 
     console.log('listing found')
     return (
-        <div>
+        <div className="listing-details-wrapper">
             <div className="listing">
                 <h1>{listing.name}</h1>
                 <h3>{listing.address}</h3>
                 <h3>{listing.hours}</h3>
                 <p>{listing.description}</p>
+            </div>
+            <div className="leaflet-map-container">
+                <LeafletMap className="leaflet-map"/>
             </div>
         </div>
     )
