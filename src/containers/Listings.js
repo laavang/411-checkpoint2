@@ -4,7 +4,8 @@ import { deleteListing } from '../redux/actions'
 
     const mapStateToProps = (state) => {
         return {
-            listings: state.listings
+            listings: state.listings,
+            user: state.user
         }
     }
 

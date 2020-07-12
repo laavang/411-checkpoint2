@@ -5,6 +5,11 @@ import LoggedInBar from './LoggedInBar'
 
 const Navigation = (props) => {
 
+    const logOut = (e) => {
+        e.preventDefault()
+        props.logOut()
+      }
+
     console.log(props.user);
 
     return (
@@ -19,20 +24,17 @@ const Navigation = (props) => {
                             <Link className="nav-link" to="/">Listings</Link>
                         </li>
                         <li>
-                            {props.user && props.user.isLoggedIn || document.cookie
+                            {(props.user && props.user.isLoggedIn) || document.cookie
                                 ?
                                 <li className="nav-list-item"
-                                    onClick={() => {
-                                        document.cookie = "loggedIn="
-                                        window.location.replace("/login")
-                                    }}>
+                                    onClick={logOut}>
                                     Log Out
                         </li>
                                 :
                                 <Link className="nav-link" to="/login">Log In</Link>
                             }
                         </li>
-                        {props.user && props.user.isLoggedIn || document.cookie
+                        {(props.user && props.user.isLoggedIn) || document.cookie
                             ? <li>
                                 <Link className="nav-link" to="/add">Add</Link>
                             </li>
@@ -41,7 +43,7 @@ const Navigation = (props) => {
                     </ul>
                 </Toolbar>
             </AppBar>
-            {props.user && props.user.isLoggedIn || document.cookie
+            {(props.user && props.user.isLoggedIn) || document.cookie
                 ?
                 <LoggedInBar username={props.user.username}/>
                 :

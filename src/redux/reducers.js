@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { LeafletProvider } from 'react-leaflet';
 
 const listings = (state = [], action) => {
     switch (action.type) {
@@ -24,6 +25,10 @@ const user = (state = { username: null, password: null, isLoggedIn: false }, act
             const newUser = action.value;
             console.log("New user: ", newUser);
             return newUser;
+        case 'LOG_OUT':
+            const emptyUser = { username: null, password: null, isLoggedIn: false };
+            document.cookie = 'isLoggedIn=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            return emptyUser;
         default:
             return state
     }

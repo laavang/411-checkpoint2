@@ -22,7 +22,7 @@ const Listings = (props) => {
                         <TableCell style={{ width: "15%", minWidth: "130px" }}>Address</TableCell>
                         <TableCell style={{ width: "15%", minWidth: "130px" }}>Hours</TableCell>
                         <TableCell style={{ width: "50%" }}>Description</TableCell>
-                        {props.user && props.user.isLoggedIn || document.cookie ?
+                        {(props.user && props.user.isLoggedIn) || document.cookie ?
                             < TableCell style={{ width: "5%" }}>Delete</TableCell>
                             : ""
                         }
@@ -37,7 +37,7 @@ const Listings = (props) => {
                         <TableCell>{listing["address"]}</TableCell>
                         <TableCell>{listing["hours"]}</TableCell>
                         <TableCell>{listing["description"]}</TableCell>
-                        {props.user && props.user.isLoggedIn || document.cookie ?
+                        {(props.user && props.user.isLoggedIn) || document.cookie ?
                         <TableCell style={{textAlign:"center"}}>
                             <DeleteIcon 
                                 onClick ={() => props.deleteListing(index)}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { render } from '@testing-library/react';
 import LeafletMap from '../containers/LeafletMap'
+import { Link } from 'react-router-dom'
 
 
 const ListingDetails = (props) => {
@@ -33,13 +34,14 @@ const ListingDetails = (props) => {
     return (
         <div className="listing-details-wrapper">
             <div className="listing">
+                <Link to="/">← Back to Listings</Link>
                 <h1>{listing.name}</h1>
                 <h3>{listing.address}</h3>
                 <h3>{listing.hours}</h3>
                 <p>{listing.description}</p>
             </div>
             <div className="leaflet-map-container">
-                <LeafletMap className="leaflet-map"/>
+                <LeafletMap className="leaflet-map" lat={listing.lat} lng={listing.lng}/>
             </div>
         </div>
     )

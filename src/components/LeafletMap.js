@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-// import 'node_modules/leaflet-geosearch/dist/geosearch.css';
 
 
 const LeafletMap = (props) => {
 
+    console.log("Local props postiion: ", props.position)
+
     console.log(props.map)
-    const zoom = props.map.zoom
-    const position = [props.map.lat, props.map.lng]
+    const position = [props.lat, props.lng]
 
     return (
-      <Map center={position} zoom={zoom}>
+      <Map center={position} zoom="13">
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
